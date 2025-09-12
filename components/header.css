@@ -1,0 +1,30 @@
+nav {
+    padding: 20px 20px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+.link-home {
+    color: #000;
+    font-weight: 900;
+    font-size: 1.6rem;
+    margin-right: auto;
+}
+
+.link-page {
+    color: #4D4D4D;
+    font-weight: 600;
+}
+
+.link-page:hover {
+    text-decoration: underline;
+}

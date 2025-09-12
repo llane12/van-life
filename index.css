@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    overflow-y: auto;
+    background-color: #FFF7ED;
+}
+
+.container-center {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}

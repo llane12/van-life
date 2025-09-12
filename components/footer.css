@@ -1,0 +1,12 @@
+div.footer {
+    background-color: #252525;
+    display: flex;
+    justify-content: center;
+    padding: 25px 50px 25px;
+}
+
+div.footer > span {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: #AAAAAA;
+}

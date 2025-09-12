@@ -1,0 +1,43 @@
+.btn {
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #FFFFFF;
+    padding: 12px 22px 12px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-orange {
+    background-color: #FF8C38;
+}
+
+.btn-orange.btn-over {
+    background-color: #FFA86B;
+}
+
+.btn-orange.btn-pressed {
+    background-color: #E57D32;
+}
+
+.btn-black {
+    background-color: #161616;
+}
+
+.btn-black.btn-over {
+    background-color: #383838;
+}
+
+.btn-black.btn-pressed {
+    background-color: #261408;
+}
+
+.btn-normal {
+    border-radius: 5px;
+}
+
+.btn-rounded {
+    border-radius: 10px;
+}
