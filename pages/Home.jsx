@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom"
-
 import LinkButton from "../components/LinkButton"
 import "./home.css"
 
