@@ -1,0 +1,70 @@
+.van-detail-container {
+    display: flex;
+    justify-content: center;
+}
+
+.van-detail-content {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 50px;
+    margin-inline: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.van-detail-back-link {
+    color: #858585;
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.van-detail-back-link:hover {
+    color: #161616;
+}
+
+.van-detail-img-container {
+    width: 100%;
+    max-width: 550px;
+}
+
+.van-detail-img {
+    margin-top: 20px;
+    border-radius: 5px;
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.van-detail-tag {
+    align-self: flex-start;
+    margin-top: 30px;
+}
+
+.van-detail-name {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #161616;
+    margin: 15px 0px 0px;
+}
+
+.van-detail-price {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #161616;
+    margin: 15px 0px 0px;
+}
+
+.van-detail-price > span {
+    font-weight: 500;
+    font-size: 1.25rem;
+}
+
+.van-detail-description {
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 15px 0px;
+}

@@ -22,3 +22,42 @@ body {
     display: flex;
     justify-content: center;
 }
+
+/*** Van Type Tags ***/
+.van-tag {
+    border-radius: 5px;
+    padding-block: 6px;
+    padding-inline: 23px;
+}
+
+button.van-tag {
+    border-style: none;
+    background-color: #FFEAD0;
+    font-family: "Inter", sans-serif;
+    color: #4D4D4D;
+    cursor: pointer;
+}
+
+i.van-tag {
+    font-style: normal;
+}
+
+button.van-tag:hover,
+i.van-tag.active {
+    color: #FFEAD0;
+}
+
+button.van-tag.simple:hover,
+i.van-tag.active.simple {
+    background-color: #E17654;
+}
+
+button.van-tag.luxury:hover,
+i.van-tag.active.luxury {
+    background-color: #161616;
+}
+
+button.van-tag.rugged:hover,
+i.van-tag.active.rugged {
+    background-color: #115E59;
+}

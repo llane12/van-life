@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
+import { capitalizeFirstLetter } from "../utils/text";
 import "./vans.css";
 
 export default function Vans() {
@@ -17,29 +19,27 @@ export default function Vans() {
             .catch(error => console.log("Error fetching data: " + error));
     }, []);
 
-    function capitalizeFirstLetter(val) {
-        return String(val).charAt(0).toUpperCase() + String(val).slice(1);
-    }
-
     const tags = ["simple", "rugged", "luxury"];
-    const tagsElements = tags.map(tag => (
-        <button className={"van-tag " + tag}>{capitalizeFirstLetter(tag)}</button>
+    const tagElements = tags.map((tag, i) => (
+        <button key={i} className={"van-tag " + tag}>{capitalizeFirstLetter(tag)}</button>
     ));
 
-    const vansElements = vans.map(van => (
-        <li key={van.id} className="van-card">
-            <img src={van.imageUrl} className="van-img" />
-            <div className="van-card-data">
-                <div className="van-card-data-left">
-                    <p className="van-card-name">{van.name}</p>
-                    <p className={"van-tag active " + van.type}>{capitalizeFirstLetter(van.type)}</p>
+    const vanElements = vans.map(van => (
+        <Link key={van.id} to={`/van-life/vans/${van.id}`} className="van-link">
+            <li className="van-card">
+                <img src={van.imageUrl} className="van-img" />
+                <div className="van-card-data">
+                    <div className="van-card-data-left">
+                        <p className="van-card-name">{van.name}</p>
+                        <i className={"van-tag active " + van.type}>{capitalizeFirstLetter(van.type)}</i>
+                    </div>
+                    <div className="van-card-data-right">
+                        <p className="van-price">{"$" + van.price}</p>
+                        <p className="van-price-duration">{"/day"}</p>
+                    </div>
                 </div>
-                <div className="van-card-data-right">
-                    <p className="van-price">{"$" + van.price}</p>
-                    <p className="van-price-duration">{"/day"}</p>
-                </div>
-            </div>
-        </li>
+            </li>
+        </Link>
     ));
 
     return (
@@ -47,11 +47,11 @@ export default function Vans() {
             <div className="vans-content">
                 <h1>Explore our van options</h1>
                 <div className="tags-container">
-                    {tagsElements}
+                    {tagElements}
                     <button className="btn-clear-filters">Clear filters</button>
                 </div>
                 <ul className="vans-list">
-                    {vansElements}
+                    {vanElements}
                 </ul>
             </div>
         </div>

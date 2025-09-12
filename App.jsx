@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Vans from "./pages/Vans";
+import VanDetail from "./pages/VanDetail";
 
 export default function App() {
     return (
@@ -15,6 +16,7 @@ export default function App() {
                     <Route path="/van-life/" element={<Home />} />
                     <Route path="/van-life/about" element={<About />} />
                     <Route path="/van-life/vans" element={<Vans />} />
+                    <Route path="/van-life/vans/:id" element={<VanDetail />} />
                 </Routes>
             </BrowserRouter>
             <Footer />
