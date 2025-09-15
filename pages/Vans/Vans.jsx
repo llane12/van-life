@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import { capitalizeFirstLetter } from "../utils/text";
+import { capitalizeFirstLetter } from "../../utils/text";
 import "./vans.css";
 
 export default function Vans() {
@@ -20,8 +20,8 @@ export default function Vans() {
     }, []);
 
     const tags = ["simple", "rugged", "luxury"];
-    const tagElements = tags.map((tag, i) => (
-        <button key={i} className={"van-tag " + tag}>{capitalizeFirstLetter(tag)}</button>
+    const tagElements = tags.map(tag => (
+        <button key={tag} className={"van-tag " + tag}>{capitalizeFirstLetter(tag)}</button>
     ));
 
     const vanElements = vans.map(van => (

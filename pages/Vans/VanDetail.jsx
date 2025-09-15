@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { LuArrowLeft } from "react-icons/lu";
 
-import LinkButton from "../components/LinkButton";
-import { capitalizeFirstLetter } from "../utils/text";
+import LinkButton from "../../components/LinkButton";
+import { capitalizeFirstLetter } from "../../utils/text";
 import "./vanDetail.css"
 
 export default function VanDetail() {

@@ -1,15 +1,15 @@
-nav {
+.nav-header {
     padding: 20px 20px 20px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-nav a {
+.nav-header a {
     text-decoration: none;
 }
 
-nav a:hover {
+.nav-header a:hover {
     text-decoration: underline;
 }
 
@@ -27,4 +27,9 @@ nav a:hover {
 
 .link-page:hover {
     text-decoration: underline;
+}
+
+.link-page.active {
+    color: #000;
+    font-weight: 700;
 }
