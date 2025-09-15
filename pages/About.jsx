@@ -16,7 +16,7 @@ export default function About() {
                     <p className="card-header">
                         Your destination is waiting.<br />Your van is ready.
                     </p>
-                    <LinkButton to="/van-life/vans" className="card-button" color="black" variant="rounded">Explore our vans</LinkButton>
+                    <LinkButton to="../vans" className="card-button" color="black" variant="rounded">Explore our vans</LinkButton>
                 </div>
             </div>
         </div>

@@ -32,7 +32,7 @@ export default function HostVanDetailLayout() {
     return (
         <div className="host-van-detail-container">
             <div className="host-van-detail-content">
-                <Link to="/van-life/host/vans" className="host-van-detail-back-link">
+                <Link to=".." relative="path" className="host-van-detail-back-link">
                     <LuArrowLeft />
                     Back to all my vans
                 </Link>
@@ -49,9 +49,9 @@ export default function HostVanDetailLayout() {
                             </div>
                         </div>
                         <nav className="nav-host-van-detail">
-                            <NavLink to={`/van-life/host/vans/${vanId}`} end className={link => link.isActive ? "host-link active" : "host-link"}>Details</NavLink>
-                            <NavLink to={`/van-life/host/vans/${vanId}/pricing`} className={link => link.isActive ? "host-link active" : "host-link"}>Pricing</NavLink>
-                            <NavLink to={`/van-life/host/vans/${vanId}/photos`} className={link => link.isActive ? "host-link active" : "host-link"}>Photos</NavLink>
+                            <NavLink to="." end className={link => link.isActive ? "host-link active" : "host-link"}>Details</NavLink>
+                            <NavLink to="pricing" className={link => link.isActive ? "host-link active" : "host-link"}>Pricing</NavLink>
+                            <NavLink to="photos" className={link => link.isActive ? "host-link active" : "host-link"}>Photos</NavLink>
                         </nav>
                         <Outlet />
                     </div>

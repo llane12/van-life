@@ -8,7 +8,7 @@ export default function Home() {
                 <p className="home-header">You got the travel plans, we got the travel vans.</p>
                 <p className="home-text">Add adventure to your life by joingin the #vanlife movement. Rent the perfect van to make your perfect road trip.</p>
                 <div className="home-find-van">
-                    <LinkButton to="/van-life/vans" color="orange" variant="normal">Find your van</LinkButton>
+                    <LinkButton to="vans" color="orange" variant="normal">Find your van</LinkButton>
                 </div>
             </div>
         </div>

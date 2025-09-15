@@ -6,10 +6,10 @@ export default function HostLayout() {
     return (
         <>
             <nav className="nav-host">
-                <NavLink to="/van-life/host" end className={link => link.isActive ? "host-link active" : "host-link"}>Dashboard</NavLink>
-                <NavLink to="/van-life/host/income" className={link => link.isActive ? "host-link active" : "host-link"}>Income</NavLink>
-                <NavLink to="/van-life/host/vans" className={link => link.isActive ? "host-link active" : "host-link"}>Vans</NavLink>
-                <NavLink to="/van-life/host/reviews" className={link => link.isActive ? "host-link active" : "host-link"}>Reviews</NavLink>
+                <NavLink to="." end className={link => link.isActive ? "host-link active" : "host-link"}>Dashboard</NavLink>
+                <NavLink to="income" className={link => link.isActive ? "host-link active" : "host-link"}>Income</NavLink>
+                <NavLink to="vans" className={link => link.isActive ? "host-link active" : "host-link"}>Vans</NavLink>
+                <NavLink to="reviews" className={link => link.isActive ? "host-link active" : "host-link"}>Reviews</NavLink>
             </nav>
             <Outlet />
         </>

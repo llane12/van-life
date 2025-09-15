@@ -27,7 +27,7 @@ export default function VanDetail() {
     return (
         <div className="van-detail-container">
             <div className="van-detail-content">
-                <Link to="/van-life/vans" className="van-detail-back-link">
+                <Link to=".." relative="path" className="van-detail-back-link">
                     <LuArrowLeft />
                     Back to all vans
                 </Link>
