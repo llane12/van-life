@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
+import AuthRequired from "./components/AuthRequired";
 import Home from "./pages/Home";
-import Login from "./pages/Login";
+import Login from "./pages/Login/Login";
+import Account from "./pages/Account";
 import About from "./pages/About";
 import Vans from "./pages/Vans/Vans";
 import VanDetail from "./pages/Vans/VanDetail";
@@ -28,20 +30,25 @@ export default function App() {
                         <Route path="about" element={<About />} />
                         <Route path="vans" element={<Vans />} />
                         <Route path="vans/:id" element={<VanDetail />} />
-                        <Route path="host" element={<HostLayout />}>
-                            <Route index element={<HostDashboard />} />
-                            <Route path="income" element={<HostIncome />} />
-                            <Route path="reviews" element={<HostReviews />} />
-                            <Route path="vans" element={<HostVans />} />
-                            <Route path="vans/:id" element={<HostVanDetailLayout />}>
-                                <Route index element={<HostVanDetail />} />
-                                <Route path="pricing" element={<HostVanPricing />} />
-                                <Route path="photos" element={<HostVanPhotos />} />
+
+                        <Route element={<AuthRequired />}>
+                            <Route path="account" element={<Account />} />
+                            <Route path="host" element={<HostLayout />}>
+                                <Route index element={<HostDashboard />} />
+                                <Route path="income" element={<HostIncome />} />
+                                <Route path="reviews" element={<HostReviews />} />
+                                <Route path="vans" element={<HostVans />} />
+                                <Route path="vans/:id" element={<HostVanDetailLayout />}>
+                                    <Route index element={<HostVanDetail />} />
+                                    <Route path="pricing" element={<HostVanPricing />} />
+                                    <Route path="photos" element={<HostVanPhotos />} />
+                                </Route>
                             </Route>
                         </Route>
 
                         <Route path="*" element={<NotFound />} />
                     </Route>
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </BrowserRouter>
         </>

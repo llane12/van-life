@@ -33,3 +33,12 @@
     color: #000;
     font-weight: 700;
 }
+
+.link-icon {
+    color: #4D4D4D;
+}
+
+.link-icon:hover,
+.link-icon.active {
+    color: #FF8C38;
+}

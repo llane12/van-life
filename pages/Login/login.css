@@ -44,3 +44,11 @@
     font-family: "Inter", sans-serif;
     font-weight: 700;
 }
+
+.login-form > button:disabled {
+    background-color: #FFB784;
+}
+
+.login-error {
+    color: #FF4F38;
+}
