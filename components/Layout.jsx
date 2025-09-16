@@ -14,7 +14,7 @@ export default function Layout() {
         try {
             const retrieved = localStorage.getItem("userData");
             const userData = JSON.parse(retrieved);
-            if (userData.token === "Enjoy your van, here's your tokens."
+            if (userData && userData.token === "Enjoy your van, here's your tokens."
                 && userData.user && userData.user.id && userData.user.email && userData.user.name) {
                 setUser(userData.user);
             }
@@ -26,7 +26,7 @@ export default function Layout() {
 
     function login(userData) {
         localStorage.setItem("userData", JSON.stringify(userData))
-        setUser(userData);
+        setUser(userData.user);
     }
 
     function logout() {

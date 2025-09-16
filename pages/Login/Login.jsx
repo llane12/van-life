@@ -13,6 +13,8 @@ export default function Login() {
     const location = useLocation();
     const navigate = useNavigate();
 
+    const redirectPath = location.state?.desiredPath ?? "/van-life/host";
+
     function handleLogin(formData) {
         const email = formData.get("email");
         const password = formData.get("password");
@@ -24,7 +26,7 @@ export default function Login() {
             .then(data => {
                 setError(null);
                 login(data);
-                navigate("/van-life/host", { replace: true })
+                navigate(redirectPath, { replace: true })
             }).catch(err => {
                 setError(err);
             }).finally(() => {
