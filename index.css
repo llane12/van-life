@@ -17,6 +17,25 @@ body {
     background-color: #FFF7ED;
 }
 
+.not-found-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.not-found-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 450px;
+    padding: 100px 20px 50px;
+}
+
+.not-found-title {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0 0 20px;
+}
+
 /*** Van Type Tags ***/
 .van-tag {
     border-radius: 5px;
