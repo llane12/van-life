@@ -1,11 +1,14 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useSearchParams, Link } from "react-router-dom";
 
 import { capitalizeFirstLetter } from "../../utils/text";
 import "./vans.css";
 
 export default function Vans() {
+    const [searchParams, setSearchParams] = useSearchParams();
     const [vans, setVans] = useState([]);
+
+    const typeFilter = searchParams.get("type");
 
     useEffect(() => {
         fetch("/api/vans")
@@ -19,13 +22,29 @@ export default function Vans() {
             .catch(error => console.log("Error fetching data: " + error));
     }, []);
 
+    function handleFilterChange(key, value) {
+        setSearchParams(prevParams => {
+            if (value === null) {
+                prevParams.delete(key)
+            } else {
+                prevParams.set(key, value)
+            }
+            return prevParams
+        })
+    }
+
     const tags = ["simple", "rugged", "luxury"];
     const tagElements = tags.map(tag => (
-        <button key={tag} className={"van-tag " + tag}>{capitalizeFirstLetter(tag)}</button>
+        <button
+            key={tag}
+            onClick={() => handleFilterChange("type", tag)}
+            className={`van-tag ${tag} ${typeFilter === tag ? "active" : ""}`}
+        >{capitalizeFirstLetter(tag)}</button>
     ));
 
-    const vanElements = vans.map(van => (
-        <Link key={van.id} to={van.id} className="van-link">
+    const filteredVans = typeFilter ? vans.filter(van => van.type === typeFilter) : vans;
+    const vanElements = filteredVans.map(van => (
+        <Link key={van.id} to={van.id} state={{ queryString: "?" + searchParams.toString(), type: typeFilter }} className="van-link">
             <li className="van-card">
                 <img src={van.imageUrl} className="van-img" />
                 <div className="van-card-data">
@@ -48,7 +67,7 @@ export default function Vans() {
                 <h1>Explore our van options</h1>
                 <div className="tags-container">
                     {tagElements}
-                    <button className="btn-clear-filters">Clear filters</button>
+                    {typeFilter && <button onClick={() => handleFilterChange("type", null)} className="btn-clear-filters">Clear filters</button>}
                 </div>
                 <ul className="vans-list">
                     {vanElements}

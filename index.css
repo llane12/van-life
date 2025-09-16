@@ -37,21 +37,21 @@ i.van-tag {
 }
 
 button.van-tag:hover,
-i.van-tag.active {
+.van-tag.active {
     color: #FFEAD0;
 }
 
 button.van-tag.simple:hover,
-i.van-tag.active.simple {
+.van-tag.active.simple {
     background-color: #E17654;
 }
 
 button.van-tag.luxury:hover,
-i.van-tag.active.luxury {
+.van-tag.active.luxury {
     background-color: #161616;
 }
 
 button.van-tag.rugged:hover,
-i.van-tag.active.rugged {
+.van-tag.active.rugged {
     background-color: #115E59;
 }

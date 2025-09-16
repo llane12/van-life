@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import { LuArrowLeft } from "react-icons/lu";
 
 import LinkButton from "../../components/LinkButton";
@@ -11,6 +11,10 @@ export default function VanDetail() {
 
     const params = useParams();
     const vanId = params.id;
+
+    const location = useLocation();
+    const queryString = location.state?.queryString || "";
+    const filterType = location.state?.type || "all";
 
     useEffect(() => {
         fetch(`/api/vans/${vanId}`)
@@ -27,9 +31,9 @@ export default function VanDetail() {
     return (
         <div className="van-detail-container">
             <div className="van-detail-content">
-                <Link to=".." relative="path" className="van-detail-back-link">
+                <Link to={".."+ queryString} relative="path" className="van-detail-back-link">
                     <LuArrowLeft />
-                    Back to all vans
+                    Back to {filterType} vans
                 </Link>
                 {van ? (
                     <>
