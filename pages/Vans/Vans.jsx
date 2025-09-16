@@ -2,24 +2,32 @@ import { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 
 import { capitalizeFirstLetter } from "../../utils/text";
+import { getAllVans } from "./api";
 import "./vans.css";
 
 export default function Vans() {
     const [searchParams, setSearchParams] = useSearchParams();
     const [vans, setVans] = useState([]);
+    const [loading, setLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     const typeFilter = searchParams.get("type");
 
     useEffect(() => {
-        fetch("/api/vans")
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error("Failed to fetch vans");
-                }
-                return res.json();
-            })
-            .then(data => setVans(data.vans))
-            .catch(error => console.log("Error fetching data: " + error));
+        async function loadVans() {
+            setLoading(true);
+            try {
+                const data = await getAllVans();
+                setVans(data);
+                setError(null);
+            } catch (err) {
+                console.log(err);
+                setError(err);
+            }
+            setLoading(false);
+        }
+
+        loadVans()
     }, []);
 
     function handleFilterChange(key, value) {
@@ -61,6 +69,16 @@ export default function Vans() {
         </Link>
     ));
 
+    function renderPlaceholder() {
+        if (loading) {
+            return <h2 aria-live="polite">Loading...</h2>;
+        } else if (error) {
+            return <h2 aria-live="assertive">There was an error: {error.message}</h2>;
+        } else {
+            return null;
+        }
+    }
+
     return (
         <div className="vans-container">
             <div className="vans-content">
@@ -70,7 +88,7 @@ export default function Vans() {
                     {typeFilter && <button onClick={() => handleFilterChange("type", null)} className="btn-clear-filters">Clear filters</button>}
                 </div>
                 <ul className="vans-list">
-                    {vanElements}
+                    {renderPlaceholder() ?? vanElements}
                 </ul>
             </div>
         </div>

@@ -16,27 +16,27 @@ createServer({
     },
 
     routes() {
-        this.namespace = "api"
-        this.logging = false
+        this.namespace = "api";
+        this.logging = true;
 
         this.get("/vans", (schema, request) => {
-            return schema.vans.all()
+            return schema.vans.all();
         })
 
         this.get("/vans/:id", (schema, request) => {
-            const id = request.params.id
-            return schema.vans.find(id)
+            const id = request.params.id;
+            return schema.vans.find(id);
         })
 
-        this.get("/host/:hostId/vans", (schema, request) => {
-            const hostId = request.params.hostId
-            return schema.vans.where({ hostId })
+        this.get("/hosts/:hostId/vans", (schema, request) => {
+            const hostId = request.params.hostId;
+            return schema.vans.where({ hostId });
         })
 
-        this.get("/host/:hostId/vans/:vanId", (schema, request) => {
-            const vanId = request.params.vanId
-            const hostId = request.params.hostId
-            return schema.vans.where({ id: vanId, hostId })
+        this.get("/hosts/:hostId/vans/:vanId", (schema, request) => {
+            const vanId = request.params.vanId;
+            const hostId = request.params.hostId;
+            return schema.vans.where({ id: vanId, hostId });
         })
     }
 })

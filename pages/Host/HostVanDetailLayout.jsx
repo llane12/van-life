@@ -3,9 +3,12 @@ import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 import { LuArrowLeft } from "react-icons/lu";
 
 import { capitalizeFirstLetter } from "../../utils/text";
+import { getHostVan } from "./api";
 
 export default function HostVanDetailLayout() {
     const [van, setVan] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     const params = useParams();
     const vanId = params.id;
@@ -14,29 +17,38 @@ export default function HostVanDetailLayout() {
     const hostId = "123";
 
     useEffect(() => {
-        fetch(`/api/host/${hostId}/vans/${vanId}`)
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error("Failed to fetch van details");
-                }
-                return res.json();
-            })
-            .then(data => {
-                if (data && data.vans && data.vans.length === 1) {
-                    setVan(data.vans[0]);
-                }
-            })
-            .catch(error => console.log("Error fetching data: " + error));
+        async function loadVan() {
+            try {
+                const data = await getHostVan(hostId, vanId);
+                setVan(data);
+                setError(null);
+            } catch (err) {
+                console.log(err);
+                setError(err);
+            }
+            setLoading(false);
+        }
+        loadVan();
     }, [params]);
+
+    function renderPlaceholder() {
+        if (loading) {
+            return <h2 aria-live="polite">Loading...</h2>;
+        } else if (error) {
+            return <h2 aria-live="assertive">Unable to load van details</h2>;
+        } else {
+            return null;
+        }
+    }
 
     return (
         <div className="host-van-detail-container">
             <div className="host-van-detail-content">
-                <Link to=".." relative="path" className="host-van-detail-back-link">
+                <Link to="../vans" className="host-van-detail-back-link">
                     <LuArrowLeft />
                     Back to all my vans
                 </Link>
-                {van ? (
+                {renderPlaceholder() ?? (
                     <div className="host-van-detail-card">
                         <div className="host-van-detail-card-header">
                             <div className="host-van-detail-img-container">
@@ -55,7 +67,7 @@ export default function HostVanDetailLayout() {
                         </nav>
                         <Outlet context={van} />
                     </div>
-                ) : <h2>Loading...</h2>}
+                )}
             </div>
         </div>
     );
