@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
 import NotFound from "./pages/NotFound";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 import About from "./pages/About";
 import Vans from "./pages/Vans/Vans";
 import VanDetail from "./pages/Vans/VanDetail";
@@ -23,6 +24,10 @@ export default function App() {
                 <Routes>
                     <Route path="/van-life" element={<Layout />}>
                         <Route index element={<Home />} />
+                        <Route path="login" element={<Login />} />
+                        <Route path="about" element={<About />} />
+                        <Route path="vans" element={<Vans />} />
+                        <Route path="vans/:id" element={<VanDetail />} />
                         <Route path="host" element={<HostLayout />}>
                             <Route index element={<HostDashboard />} />
                             <Route path="income" element={<HostIncome />} />
@@ -34,9 +39,6 @@ export default function App() {
                                 <Route path="photos" element={<HostVanPhotos />} />
                             </Route>
                         </Route>
-                        <Route path="about" element={<About />} />
-                        <Route path="vans" element={<Vans />} />
-                        <Route path="vans/:id" element={<VanDetail />} />
 
                         <Route path="*" element={<NotFound />} />
                     </Route>
