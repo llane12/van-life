@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, NavLink, Outlet } from "react-router-dom";
-import { LuArrowLeft } from "react-icons/lu";
+import { ArrowLeft } from "lucide-react";
 
 import { capitalizeFirstLetter } from "../../utils/text";
 import { getHostVan } from "./api";
@@ -45,7 +45,7 @@ export default function HostVanDetailLayout() {
         <div className="host-van-detail-container">
             <div className="host-van-detail-content">
                 <Link to="../vans" className="host-van-detail-back-link">
-                    <LuArrowLeft />
+                    <ArrowLeft />
                     Back to all my vans
                 </Link>
                 {renderPlaceholder() ?? (

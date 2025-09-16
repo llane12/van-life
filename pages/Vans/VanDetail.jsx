@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams, useLocation, Link } from "react-router-dom";
-import { LuArrowLeft } from "react-icons/lu";
+import { ArrowLeft } from "lucide-react";
 
 import LinkButton from "../../components/LinkButton";
 import { capitalizeFirstLetter } from "../../utils/text";
@@ -49,7 +49,7 @@ export default function VanDetail() {
         <div className="van-detail-container">
             <div className="van-detail-content">
                 <Link to={".." + queryString} relative="path" className="van-detail-back-link">
-                    <LuArrowLeft />
+                    <ArrowLeft />
                     Back to {filterType} vans
                 </Link>
                 {renderPlaceholder() ?? (
