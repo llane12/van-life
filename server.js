@@ -6,6 +6,7 @@ createServer({
         vans: Model,
         users: Model,
         transactions: Model,
+        reviews: Model,
     },
 
     seeds(server) {
@@ -21,6 +22,9 @@ createServer({
         server.create("transaction", { id: "1", amount: 720, date: "2025-09-10", hostId: "123" })
         server.create("transaction", { id: "2", amount: 560, date: "2025-09-02", hostId: "123" })
         server.create("transaction", { id: "3", amount: 980, date: "2025-08-25", hostId: "123" })
+
+        server.create("review", { id: "1", name: "Sandy", rating: 5, text: "This is our third time using the Modest Explorer for our travels and we love it! No complaints, absolutely perfect!", date: "2025-09-10", hostId: "123" })
+        server.create("review", { id: "2", name: "Elliot", rating: 4, text: "The beach bum is an awesome van! We had it for 2 weeks and there was only one tiny issue. Super clean when we picked it up and the host is very friendly. Definitely recommended.", date: "2025-08-25", hostId: "123" })
     },
 
     routes() {
@@ -51,6 +55,11 @@ createServer({
         this.get("/hosts/:hostId/transactions", (schema, request) => {
             const hostId = request.params.hostId;
             return schema.transactions.where({ hostId });
+        })
+
+        this.get("/hosts/:hostId/reviews", (schema, request) => {
+            const hostId = request.params.hostId;
+            return schema.reviews.where({ hostId });
         })
 
         this.post("/login", (schema, request) => {

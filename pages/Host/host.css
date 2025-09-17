@@ -210,17 +210,130 @@
     align-items: center;
 }
 
-.host-income-transaction-card>p:first-of-type{
+.host-income-transaction-card>p:first-of-type {
     font-weight: 600;
     font-size: 2.25rem;
     margin: 0 auto 0 0;
 }
 
-.host-income-transaction-card>p:last-of-type{
+.host-income-transaction-card>p:last-of-type {
     font-weight: 500;
     font-size: 1.25rem;
     margin: 0;
     color: #4D4D4D;
+}
+
+/*** Host Reviews page styles ***/
+.host-reviews-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    color: #161616;
+}
+
+.host-reviews-title-container {
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+}
+
+.host-reviews-title-container>h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.host-reviews-period {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.host-reviews-period>span {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.host-reviews-rating-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.host-reviews-rating-score {
+    font-weight: 700;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.host-reviews-rating-stars {
+    display: flex;
+    align-items: center;
+    color: #FF8C38;
+}
+
+.host-reviews-rating-sub {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #4D4D4D;
+    margin: 0;
+}
+
+.host-reviews-container>img {
+    align-self: baseline;
+    margin: 30px 0;
+}
+
+.host-reviews-review-title {
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin: 0;
+}
+
+.host-reviews-review-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.host-reviews-review-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.host-reviews-review-card-stars {
+    display: flex;
+    align-items: center;
+    color: #FF8C38;
+}
+
+.host-reviews-review-card-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin: 6px 0 0 0;
+}
+
+.host-reviews-review-card-title>span {
+    color: #8C8C8C;
+    margin-left: 6px;
+}
+
+.host-reviews-review-card-text {
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 6px 0 0 0;
+}
+
+.host-reviews-review-card>hr {
+    margin: 6px 0 0 0;
+    border:none;
+    border-top:1px #C7C7C7 solid;
+    height: 1px;
 }
 
 /*** Host Vans page styles ***/

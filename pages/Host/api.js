@@ -43,3 +43,16 @@ export async function getHostAllTransactions(hostId) {
     const data = await res.json();
     return data.transactions;
 }
+
+export async function getHostAllReviews(hostId) {
+    const res = await fetch(`/api/hosts/${hostId}/reviews`);
+    if (!res.ok) {
+        throw {
+            message: "Failed to fetch reviews",
+            statusText: res.statusText,
+            status: res.status
+        };
+    }
+    const data = await res.json();
+    return data.reviews;
+}
