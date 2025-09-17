@@ -1,4 +1,4 @@
-import "./footer.css"
+import "./footer.css";
 
 export default function Footer() {
     return (
@@ -7,5 +7,5 @@ export default function Footer() {
                 <span>&#169; 2025 #VANLIFE</span>
             </div>
         </footer>
-    )
+    );
 }

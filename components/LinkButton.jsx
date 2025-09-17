@@ -1,8 +1,8 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
 
-import "./linkButton.css"
+import "./linkButton.css";
 
 export default function LinkButton({ link, color, variant, children, className, ...rest }) {
     const [isPressed, setIsPressed] = useState(false);
@@ -25,5 +25,5 @@ export default function LinkButton({ link, color, variant, children, className, 
         >
             {children}
         </Link>
-    )
+    );
 }

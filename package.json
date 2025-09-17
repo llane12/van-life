@@ -1,6 +1,7 @@
 {
   "name": "vanlife",
-  "description": "https://scrimba.com/advanced-react-c02h/~02d/s03349i6ql/head",
+  "homepage": "https://llane12.github.io/van-life/",
+  "description": "React Router training project with Scrimba (https://scrimba.com/advanced-react-c02h/~02d/s03349i6ql/head)",
   "scripts": {
     "start": "vite",
     "dev": "vite",

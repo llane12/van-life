@@ -92,5 +92,5 @@ export default function Vans() {
                 </ul>
             </div>
         </div>
-    )
+    );
 }
