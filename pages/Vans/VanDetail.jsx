@@ -23,7 +23,6 @@ export default function VanDetail() {
         async function loadVan() {
             try {
                 const data = await getVan(vanId);
-                console.log(data);
                 setVan(data);
                 setError(null);
             } catch (err) {

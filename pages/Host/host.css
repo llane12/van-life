@@ -22,6 +22,132 @@
     font-weight: 700;
 }
 
+/*** Host Dashboard page styles ***/
+.host-dash-container {
+    display: flex;
+    flex-direction: column;
+    color: #161616;
+}
+
+.host-dash-nav-link {
+    font-weight: 500;
+    text-decoration: none;
+    color: #161616;
+    font-size: 1rem;
+    margin-left: auto;
+}
+
+.host-dash-nav-link:hover {
+    text-decoration: underline;
+}
+
+.host-dash-income-card {
+    background-color: #FFEAD0;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.host-dash-income-card-data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.host-dash-income-card-data>p {
+    margin: 0;
+}
+
+.host-dash-income-card-data>p:nth-of-type(1) {
+    font-weight: 700;
+    font-size: 2.25rem;
+}
+
+.host-dash-income-card-data>p:nth-of-type(2) {
+    font-weight: 500;
+    color: #4D4D4D;
+}
+
+.host-dash-income-card-data>p:nth-of-type(2)>span {
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.host-dash-income-card-data>p:nth-of-type(3) {
+    font-weight: 700;
+    font-size: 2.5rem;
+}
+
+.host-dash-review-card {
+    background-color: #FFDDB2;
+    display: flex;
+    gap: 20px;
+    padding: 40px 20px;
+    font-weight: 700;
+    font-size: 1.5rem;
+}
+
+.host-dash-review-stars {
+    color: #FF8C38;
+}
+
+.host-dash-vans-card {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 30px 20px 10px;
+}
+
+.host-dash-vans-list {
+    list-style-type: none;
+    padding: 0 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.host-dash-van-card {
+    background-color: #FFFFFF;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.host-dash-van-card-img-container {
+    height: 66px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.host-dash-van-card-img {
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.host-dash-van-card-data-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.host-dash-van-card-data-container>p {
+    margin: 0;
+}
+
+.host-dash-van-card-data-container>p:nth-of-type(1) {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.host-dash-van-card-data-container>p:nth-of-type(2) {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #4D4D4D;
+}
+
 /*** Host Vans page styles ***/
 .host-vans-container {
     display: flex;
