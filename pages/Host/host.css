@@ -148,6 +148,81 @@
     color: #4D4D4D;
 }
 
+/*** Host Income page styles ***/
+.host-income-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.host-income-container>h1 {
+    font-weight: 700;
+    font-size: 2.25rem;
+    margin: 10px 0 30px;
+}
+
+.host-income-period {
+    font-weight: 500;
+    font-size: 1rem;
+    color: #4D4D4D;
+}
+
+.host-income-period>span {
+    text-decoration: underline;
+}
+
+.host-income-total {
+    font-weight: 800;
+    font-size: 3rem;
+    margin: 10px 0 0;
+}
+
+.host-income-container>img {
+    align-self: flex-start;
+    margin-top: 30px;
+}
+
+.host-income-transactions-card {
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.host-income-transactions-title {
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0 auto 0 0;
+}
+
+.host-income-transactions-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.host-income-transaction-card {
+    background-color: #FFFFFF;
+    border-radius: 6px;
+    padding: 30px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.host-income-transaction-card>p:first-of-type{
+    font-weight: 600;
+    font-size: 2.25rem;
+    margin: 0 auto 0 0;
+}
+
+.host-income-transaction-card>p:last-of-type{
+    font-weight: 500;
+    font-size: 1.25rem;
+    margin: 0;
+    color: #4D4D4D;
+}
+
 /*** Host Vans page styles ***/
 .host-vans-container {
     display: flex;

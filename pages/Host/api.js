@@ -30,3 +30,16 @@ export async function getHostVan(hostId, vanId) {
     }
     return data.vans[0];
 }
+
+export async function getHostAllTransactions(hostId) {
+    const res = await fetch(`/api/hosts/${hostId}/transactions`);
+    if (!res.ok) {
+        throw {
+            message: "Failed to fetch transactions",
+            statusText: res.statusText,
+            status: res.status
+        };
+    }
+    const data = await res.json();
+    return data.transactions;
+}

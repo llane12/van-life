@@ -45,7 +45,7 @@ export default function HostDashboard() {
         if (loading) {
             return <h2 aria-live="polite">Loading...</h2>;
         } else if (error) {
-            return <h2 aria-live="assertive">Unable to load van details</h2>;
+            return <h2 aria-live="assertive">Unable to load vans</h2>;
         } else {
             return null;
         }

@@ -5,6 +5,7 @@ createServer({
     models: {
         vans: Model,
         users: Model,
+        transactions: Model,
     },
 
     seeds(server) {
@@ -16,6 +17,10 @@ createServer({
         server.create("van", { id: "6", name: "Green Wonder", price: 70, description: "With this van, you can take your travel life to the next level. The Green Wonder is a sustainable vehicle that's perfect for people who are looking for a stylish, eco-friendly mode of transport that can go anywhere.", imageUrl: "https://assets.scrimba.com/advanced-react/react-router/green-wonder.png", type: "rugged", hostId: "123" })
 
         server.create("user", { id: "123", email: "admin@vanlife.com", password: "pass1234", name: "Admin" })
+
+        server.create("transaction", { id: "1", amount: 720, date: "2025-09-10", hostId: "123" })
+        server.create("transaction", { id: "2", amount: 560, date: "2025-09-02", hostId: "123" })
+        server.create("transaction", { id: "3", amount: 980, date: "2025-08-25", hostId: "123" })
     },
 
     routes() {
@@ -41,6 +46,11 @@ createServer({
             const vanId = request.params.vanId;
             const hostId = request.params.hostId;
             return schema.vans.where({ id: vanId, hostId });
+        })
+
+        this.get("/hosts/:hostId/transactions", (schema, request) => {
+            const hostId = request.params.hostId;
+            return schema.transactions.where({ hostId });
         })
 
         this.post("/login", (schema, request) => {
